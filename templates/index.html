@@ -36,7 +36,8 @@
         <div class="news-grid">
             {% for article in news_data %}
             <div class="card" data-category="{{ article.category }}">
-                <img src="{{ article.image }}" alt="News Image" loading="lazy">
+                <img src="{{ article.image }}" alt="News Image" loading="lazy" onerror="this.onerror=null; this.src='/static/placeholder.jpg';">
+
                 <div class="content">
                     <h2>{{ article.title }}</h2>
                     <p>{{ article.description }}</p>

@@ -1,7 +1,9 @@
 from flask import Flask, render_template
-from news_fetcher import get_all_news
+from news_fetcher import get_all_news, start_background_fetch
 
 app = Flask(__name__)
+
+start_background_fetch()  # ✅ Start background thread AFTER app is defined
 
 @app.route('/')
 def homepage():
